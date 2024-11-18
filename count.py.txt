@@ -1,0 +1,15 @@
+def is_happy_number(n):
+    def sum_of_squares(n):
+        return sum(int(digit)**2 for digit in str(n))
+    
+    seen = set()
+    while n != 1 and n not in seen:
+        seen.add(n)
+        n = sum_of_squares(n)
+    return n == 1
+
+numbers = [10, 501, 22, 37, 100, 999, 87, 351]
+happy_numbers = [num for num in numbers if is_happy_number(num)]
+
+print("Happy Numbers:", happy_numbers)
+print("Count of Happy Numbers:", len(happy_numbers))

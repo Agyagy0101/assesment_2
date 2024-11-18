@@ -1,0 +1,9 @@
+def find_sublist_with_zero_sum(lst):
+    for i in range(len(lst)):
+        for j in range(i + 1, len(lst) + 1):
+            if sum(lst[i:j]) == 0:
+                return lst[i:j]
+    return None
+
+numbers = [4, 2, -3, 1, 6]
+print("Sub-list with sum zero:", find_sublist_with_zero_sum(numbers))

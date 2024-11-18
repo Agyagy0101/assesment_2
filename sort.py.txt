@@ -1,0 +1,2 @@
+numbers = [1, 2, 3, 4, 5]
+print("Minimum element in sorted list:", numbers[0])

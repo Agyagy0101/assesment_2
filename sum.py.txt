@@ -1,0 +1,17 @@
+def find_triplet(lst, target):
+    lst.sort()
+    for i in range(len(lst) - 2):
+        left, right = i + 1, len(lst) - 1
+        while left < right:
+            curr_sum = lst[i] + lst[left] + lst[right]
+            if curr_sum == target:
+                return [lst[i], lst[left], lst[right]]
+            elif curr_sum < target:
+                left += 1
+            else:
+                right -= 1
+    return None
+
+numbers = [10, 20, 30, 9]
+target = 59
+print("Triplet:", find_triplet(numbers, target))

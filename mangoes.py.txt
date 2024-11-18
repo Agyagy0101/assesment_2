@@ -1,0 +1,16 @@
+def distribute_mangoes(mangoes, students):
+    mangoes.sort()
+    min_diff = float('inf')
+    best_range = None
+
+    for i in range(len(mangoes) - students + 1):
+        curr_range = mangoes[i + students - 1] - mangoes[i]
+        if curr_range < min_diff:
+            min_diff = curr_range
+            best_range = mangoes[i:i + students]
+    
+    return best_range
+
+mangoes = [12, 3, 5, 10, 7]
+students = 3
+print("Optimal Distribution of Mangoes:", distribute_mangoes(mangoes, students))
